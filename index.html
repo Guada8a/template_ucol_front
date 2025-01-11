@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+      content="Proyecto UCOL" />
+    <meta name="keywords" content="React, Typescript, UCOL Styles" />
+    <meta name="author" content="Dirección de Sistemas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto UCOL</title>
+
+    <link href="https://www.ucol.mx/favicon.ico" rel="shortcut icon">
+    <link href="https://www.ucol.mx/cms/apps/assets/css/apps.min.css?v=2.0"
+      rel="stylesheet">
+
+    <script>
+      var SITE_TEMPLATE = 1,
+          SITE_TITLE = 'Proyecto UCOL',
+          CONTAINER_MODE = 'container',
+          IMPORT_COMPONENTS = ["v-button", "errors", "elegant-table", "elegant-grid-cards"];
+    </script>
+  </head>
+  <body site-template="1">
+    <b-header
+      site-title="Proyecto UCOL"
+      text-color="var(--ultra-violet)"
+      container-size="centered"
+      border-color="var(--apple-green)">
+      <div id="menu-container">
+        <script>
+        if (window.location.pathname === '/proyecto/' || window.location.pathname === '/proyecto/acerca-de' || window.location.pathname === '/') {
+          document.write(`
+            <b-menu position="end" text-color="dark">
+              <menu-item text="Inicio" href="/proyecto/"></menu-item>
+              <menu-item text="Acerca de" href="/proyecto/acerca-de"></menu-item>
+                <menu-item text="Mi Botón" href="#" class="btn btn-primary"></menu-item>
+ <menu-item text="Opciones" href="#">
+      <menu-item text="Perfil" href="/perfil"></menu-item>
+      <menu-item text="Configuración" href="/config"></menu-item>
+      <menu-item text="Salir" href="/logout"></menu-item>
+    </menu-item>
+    
+            </b-menu>
+          `);
+        }
+      </script>
+      </div>
+    </b-header>
+
+    <main class="container-fluid py-4" id="app-container"
+      style="min-height: 79.5vh;">
+      <div id="root" class="tailwind-styles"></div>
+      <script type="module" src="/src/main.tsx"></script>
+      <script src="https://www.ucol.mx/cms/apps/assets/js/apps.min.js"></script>
+    </main>
+  </body>
+</html>
