@@ -4,10 +4,15 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  important: '#root',
+  corePlugins: {
+    preflight: false,
+  },
+  prefix: "tw-",
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['Nunito', 'sans-serif'],
       },
       colors: {
         'apple_green': {
@@ -109,5 +114,9 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('tw','.tailwind-styles &');
+    },
+  ],
 };
